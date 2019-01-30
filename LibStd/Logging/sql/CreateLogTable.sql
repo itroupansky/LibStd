@@ -1,0 +1,86 @@
+﻿IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TLog]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[TLog] (
+   [ID] [int] IDENTITY(1,1) NOT NULL,
+   [Environment] [nvarchar](200) NOT NULL, 
+   [MachineName] [nvarchar](200) NULL, 
+   [Date] [datetime] NOT NULL, 
+   [Level] [varchar](5) NOT NULL, 
+  -- [UserName] [nvarchar](200) NULL, 
+   [Message] [nvarchar](max) NOT NULL, 
+   [Logger] [nvarchar](300) NULL, 
+  -- [Properties] [nvarchar](max) NULL,
+  -- [ServerName] [nvarchar](200) NULL, 
+  -- [Port] [nvarchar](100) NULL, 
+  -- [Url] [nvarchar](2000) NULL, 
+  -- [ServerAddress] [nvarchar](100) NULL, 
+  -- [RemoteAddress] [nvarchar](100) NULL,  
+    [ThreadId] [nvarchar](10) NULL,
+ CONSTRAINT [TLog_PK] PRIMARY KEY CLUSTERED ([ID] ASC) 
+   WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] 
+
+CREATE NONCLUSTERED INDEX [IX_TLOG_Date] ON [dbo].[TLOG]
+	(
+		[Date] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+
+	CREATE NONCLUSTERED INDEX [IX_TLOG_Level] ON [dbo].[TLOG]
+	(
+		[Level] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+
+	CREATE NONCLUSTERED INDEX [IX_TLOG_Environment] ON [dbo].[TLOG]
+	(
+		[Environment] ASC,
+		[Date] ASC,
+		[ThreadId] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+
+	CREATE NONCLUSTERED INDEX [IX_TLOG_Logger] ON [dbo].[TLOG]
+	(
+		[Logger] ASC,
+		[Date] ASC
+		
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+
+	CREATE NONCLUSTERED INDEX [IX_TLOG_Machine] ON [dbo].[TLOG]
+	(
+		[MachineName] ASC,
+		[Date] ASC,
+		[ThreadId] ASC
+		
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+END
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[IDPLog]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [IDPLog] (
+
+   [Id] int IDENTITY(1,1) NOT NULL,
+   [Message] nvarchar(max) NULL,
+   [MessageTemplate] nvarchar(max) NULL,
+   [Level] nvarchar(128) NULL,
+   [TimeStamp] datetimeoffset(7) NOT NULL,  
+   [Exception] nvarchar(max) NULL,
+   [Properties] xml NULL,
+   [LogEvent] nvarchar(max) NULL
+
+   CONSTRAINT [IDPLog_PK] 
+     PRIMARY KEY CLUSTERED ([Id] ASC) 
+
+) 
+
+CREATE NONCLUSTERED INDEX [IX_IDPLog_Date] ON [dbo].[IDPLog]
+	(
+		[TimeStamp] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+
+	CREATE NONCLUSTERED INDEX [IX_IDPLog_Level] ON [dbo].[IDPLog]
+	(
+		[Level] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+
+	
+
+END
