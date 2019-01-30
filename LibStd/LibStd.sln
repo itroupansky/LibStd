@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibStd.Logging", "Logging\L
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B1FB167-9035-41B0-9661-6B64D8B8B7E9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibStd.Data", "Data\LibStd.Data.csproj", "{CC467A2D-ACC0-4607-8C14-A3BEFB805386}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibStd.Common", "Common\LibStd.Common.csproj", "{A49761F7-5BBA-4F64-A4B4-7765422A776F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{8C14F793-D545-4477-9E04-50566E315C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C14F793-D545-4477-9E04-50566E315C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C14F793-D545-4477-9E04-50566E315C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC467A2D-ACC0-4607-8C14-A3BEFB805386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC467A2D-ACC0-4607-8C14-A3BEFB805386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC467A2D-ACC0-4607-8C14-A3BEFB805386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC467A2D-ACC0-4607-8C14-A3BEFB805386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A49761F7-5BBA-4F64-A4B4-7765422A776F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A49761F7-5BBA-4F64-A4B4-7765422A776F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A49761F7-5BBA-4F64-A4B4-7765422A776F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A49761F7-5BBA-4F64-A4B4-7765422A776F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
