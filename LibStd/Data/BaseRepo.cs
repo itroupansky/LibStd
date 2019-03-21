@@ -5,6 +5,9 @@ using LibStd.Logging;
 
 namespace LibStd.Data
 {
+    /// <summary>
+    /// base repository class
+    /// </summary>
     public class BaseRepo
     {
         protected ILog _log;

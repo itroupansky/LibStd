@@ -6,6 +6,9 @@ using LibStd.Logging;
 
 namespace LibStd.Data.Options
 {
+    /// <summary>
+    /// class for multi-tenant system options, not generic
+    /// </summary>
     public class SystemOption
     {
         private static List<SystemOption> Options = new List<SystemOption>();

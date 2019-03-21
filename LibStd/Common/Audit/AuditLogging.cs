@@ -8,6 +8,9 @@ using LibStd.Logging;
 
 namespace LibStd.Common.Audit
 {
+    /// <summary>
+    /// Class for Audit Logging implementation
+    /// </summary>
     public class AuditLogging : IAuditLogging
     {
         private CompareLogic compareLogic;

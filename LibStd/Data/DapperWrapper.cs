@@ -30,7 +30,7 @@ namespace LibStd.Data
     }
 
     /// <summary>
-    /// class foe working with Dapper
+    /// class for data access with Dapper
     /// </summary>
     public class DapperWrapper : IDAO
     {
