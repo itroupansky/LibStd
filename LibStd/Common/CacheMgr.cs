@@ -5,6 +5,7 @@ namespace Tracker.Web
 {
     /// <summary>
     /// class for application-wide caching in HttpContext(for web) or Memory cache (for client)
+    /// Does not inherit from interface for now to maintain compatibility with .NET Framework objects
     /// </summary>
     public class CacheMgr
     {
