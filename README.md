@@ -1,2 +1,2 @@
 # LibStd
-Some useful Libraries in .NET Standard
+Some useful .NET Standard Libraries
