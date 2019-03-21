@@ -1,4 +1,4 @@
-;# LibStd
+# LibStd
 Some useful .NET Standard Libraries
 
 LibStd.Logging - for logging; 
